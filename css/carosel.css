@@ -1,0 +1,80 @@
+/* CAROSEL HOME */
+.caroufredsel_wrapper { width:770px!important; top:5px!important; height:780px!important; }
+.list_carousel {
+	position:relative;
+	width: 770px;
+	margin: 0 auto;
+}
+
+.list_carousel ul {
+	position:relative;	
+	left:0px;
+	top:20px;
+	list-style: none;
+	display: block;
+}
+
+.list_carousel li {
+	text-align: left;
+	width: 171px;
+	height: 780px;
+	margin:10px;
+	display: block;
+	float: left;
+}
+.list_carousel a {color:#333;text-decoration:none;}
+.list_carousel a :hover {
+color: #666;
+text-decoration:none;
+}
+
+.list_carousel li p.modeloZeroKm {font:bold 12x/18px Arial, Helvetica, sans-serif;color: #999;}
+			
+.list_carousel.responsive {
+	width: auto;
+	margin-left: 0;
+}
+.clearfix {
+	float: none;
+	clear: both;
+}
+.prevBt {
+	/* float: left; */
+	position: absolute;
+	right: 40px;
+	top: -10px;
+}
+.nextBt {
+	/*float: right;*/
+	position: absolute; 
+	right:16px; 
+	top:-10px;
+}
+.pager {
+	float: left;
+	width: 30px;
+	text-align: center;
+}
+.pager a {
+	margin: 0 2px;
+	padding:2px 6px;
+	text-decoration: none;
+	text-indent: -9999em;
+	color:#FFF;
+	font-weight:bold;
+	background-color:#C00;
+}
+.pager a:hover {
+	color:#FFF;
+	font-weight:bold;
+	text-indent: -9999em;
+	background-color:#323232;
+}
+.pager a.selected {
+	background-color:#323232;
+}
+.timer {
+	/*background-color: #999;*/
+	height: 6px;
+	width: 0px;
+}

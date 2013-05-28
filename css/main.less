@@ -1,0 +1,1494 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*Importados
+==============================================================*/
+@import 'grid.less';
+
+/*
+=======================================================================
+	Basic Reset
+=======================================================================
+*/
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td {
+	margin:0;
+	padding:0;
+}
+html,body {
+	margin:0;
+	padding:0;
+}
+table {
+	border-collapse:collapse;
+	border-spacing:0;
+}
+fieldset,img {
+	border:0;
+}
+address,caption,cite,code,dfn,th,var {
+	font-style:normal;
+	font-weight:normal;
+}
+ol,ul {
+	list-style:none;
+}
+caption,th {
+	text-align:left;
+}
+h1,h2,h3,h4,h5,h6 {
+	font-size:100%;
+	font-weight:normal;
+}
+q:before,q:after {
+	content:'';
+}
+abbr,acronym { border:0;
+}
+section, header{
+	display: block;
+}
+blockquote {
+			font-family: Georgia, serif;
+			font-size: 16px;
+			font-style: italic;
+			width: 600px;
+			margin: 0.25em 0;
+			padding: 0.25em 40px;
+			line-height: 1.45;
+			position: relative;
+			color: #383838;
+		}
+
+		blockquote:before {
+			display: block;
+			content: "\201C";
+			font-size: 80px;
+			position: absolute;
+			left: -10px;
+			top: -20px;
+			color: #7a7a7a;
+		}
+
+		blockquote cite {
+			color: #999999;
+			font-size: 14px;
+			display: block;
+			margin-top: 5px;
+		}
+
+		blockquote cite:before {
+			content: "\2014 \2009";
+		}
+a { text-decoration:none; }
+
+/*
+=======================================================================
+	Variaveis e funçoes
+=======================================================================
+*/
+
+
+.radius(@valor: 7px){
+	border-radius: @valor;
+	-webkit-border-radius: @valor;
+}
+
+.shadow(@blur: 5px, @opacidade: 0.5){
+	-webkit-box-shadow: 0px 0px @blur 0px rgba(0, 0, 0, @opacidade);
+	box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.4);
+}
+
+.grad-blue(){
+	background: #0f83c0; /* Old browsers */
+	background: -moz-linear-gradient(top,  #0f83c0 0%, #3d90bc 48%, #0a6a92 53%, #115b82 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#0f83c0), color-stop(48%,#3d90bc), color-stop(53%,#0a6a92), color-stop(100%,#115b82)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #0f83c0 0%,#3d90bc 48%,#0a6a92 53%,#115b82 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #0f83c0 0%,#3d90bc 48%,#0a6a92 53%,#115b82 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #0f83c0 0%,#3d90bc 48%,#0a6a92 53%,#115b82 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #0f83c0 0%,#3d90bc 48%,#0a6a92 53%,#115b82 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0f83c0', endColorstr='#115b82',GradientType=0 ); /* IE6-9 */
+}
+
+
+/*
+=======================================================================
+	Regras Comuns
+=======================================================================
+*/
+
+body { font:12px/14px Arial, Helvetica, sans-serif; background:#fff url(../images/bgSite.jpg) center top repeat-x; }
+
+.centraliza {
+	width:1000px;
+	margin: 0 auto;
+	padding:0;
+	.clearfix();
+}
+
+.centraliza.home { margin-top:-30px; }
+.fleft { float:left; display:block;}
+.fright { float:right; display:block;}
+
+.p10 { padding:10px 0;}
+
+a{
+	&.button {
+		display:block;
+		line-height:30px;
+		color:#fff;
+		border:1px solid #124f72;
+		font-weight:bold;
+		text-align:center;
+		margin-top:10px;
+		-webkit-border-radius:3px;
+		-moz-border-radius:3px;
+		-ms-border-radius:3px;
+		-o-border-radius:3px;
+		border-radius:3px;
+		.grad-blue;
+		transition:.25s ease-out;
+		-webkit-transition:.25s ease-out;
+		-moz-transition:.25s ease-out;
+		-o-transition:.25s ease-out;
+		-ms-transition:.25s ease-out;
+
+		&:hover { background:#145980; }
+
+	}
+}
+
+
+/*
+=======================================================================
+	Header
+=======================================================================
+*/
+.header {
+	height:84px;
+	position:relative;
+
+	.logoHeader { position:absolute; top:13px; left:11px;
+		h1 { background:url(../images/logoItavema.png) center top no-repeat; width:226px;
+			a { display:block; height:54px;
+				span { display:none; }
+			}
+		}
+	}
+
+	.buscaHeader {
+		width:252px; height:30px; position:absolute; top:10px; left:307px;
+			form {
+				input[type=text]#busca {
+					border: 1px #c7cbcd solid;
+					background: #fff;
+					float:left;
+					width: 242px;
+					margin: 0 0 10px 0;
+					padding-left: 10px;
+					line-height:28px;
+					height: 28px;
+					color: #adadad;
+					font-size: 11px;
+					font-style: italic;
+					border-radius:3px;
+					-webkit-border-radius:3px;
+					-moz-border-radius:3px;
+					-ms-border-radius:3px;
+					-o-border-radius:3px;
+				}
+
+				input[type=button].buscar {
+					background:url(../images/bgLupa.png) center center no-repeat;
+					width: 40px;
+					height: 30px;
+					color: #fff;
+					border: none;
+					margin: 0px;
+					padding: 0px;
+					position:absolute;
+					right:0;
+					bottom:0;
+					cursor: pointer;
+					font-weight:bold;
+					font-size:14px;
+					text-shadow:1px 2px 3px #323232;
+					-webkit-border-radius: 0 5px 5px 0;
+					-moz-border-radius: 0 5px 5px 0;
+					-ms-border-radius: 0 5px 5px 0;
+					-o-border-radius: 0 5px 5px 0;
+					border-radius: 0 5px 5px 0;
+				}
+
+			}
+
+	}
+
+	.linksHeader {
+		position:absolute; left:570px; top:10px; width:360px;
+
+		.irParaHeader{
+			select {
+				border: 1px #c7cbcd solid;
+				display: inline-block;
+				float: left;
+				margin-bottom: 10px;
+				padding-left: 10px;
+				line-height:30px;
+				height:30px;
+				width:90px;
+				vertical-align: middle;
+				color: #222;
+				font-size:11px;
+				-webkit-border-radius: 3px;
+				-moz-border-radius: 3px;
+				-ms-border-radius: 3px;
+				-o-border-radius: 3px;
+				border-radius: 3px;
+			}
+		}
+
+		ul {
+			padding-top:7px;
+
+			li {
+				float:left; border-right:1px solid #002c50; padding:0 10px;
+				&.last { border-right:none; }
+				a {
+					color:#002c50; font-size:11px; text-decoration:underline;
+					&:hover { text-decoration:none; }
+				}
+			}
+		}
+
+	}
+
+	.socialIcons {
+		height:30px;
+		position:absolute;
+		right:0;
+		top:10px;
+		.clearfix();
+
+		a {
+			background: url('../img/icones.png') no-repeat;
+			width: 30px;
+			height: 30px;
+			float: left;
+			margin-left: 10px;
+			transition:.25s ease-out;
+			-webkit-transition:.25s ease-out;
+			-moz-transition:.25s ease-out;
+			-o-transition:.25s ease-out;
+			-ms-transition:.25s ease-out;
+
+			&:hover{
+				opacity: 0.7;
+			}
+
+			&.facebook{
+				background-position: -29px -287px;
+			}
+
+			&.twitter{
+				background-position: -128px -287px;
+			}
+
+			&.youtube{
+				background-position: -212px -293px;
+				width: 42px;
+				height: 17px;
+				margin-top: 5px;
+			}
+		}
+	}
+
+	.menuHeader {
+		position:absolute;
+		left:268px;
+		top:52px;
+		height:32px;
+
+		ul{
+			li {
+				float:left;
+				a{
+					border-right:1px solid #c8cccf;
+					color:#1d2227;
+					display:block;
+					font-weight:bold;
+					line-height:32px;
+					padding:0 21px 0 20px;
+					transition:.25s ease-out;
+					-webkit-transition:.25s ease-out;
+					-moz-transition:.25s ease-out;
+					-o-transition:.25s ease-out;
+					-ms-transition:.25s ease-out;
+
+					&:hover { color:#d98304; }
+					&.laranja {
+						background:url(../images/bgLojasMenu.png) left center no-repeat; color:#d98304; padding-left:35px;
+						&:hover { color:#1d2227; }
+					}
+					&.last { border-right:none; }
+				}
+			}
+		}
+	}
+
+}
+
+/* //Banner// */
+.bannerHome {
+	background:url(../images/bgBanner.jpg) center top repeat-x; width:100%;
+	.centraliza {
+		background:url(../images/sombraBanner.png) center bottom no-repeat; height:307px;
+	}
+}
+
+
+.lojasHome {
+	height:134px;
+	.centraliza {
+		position:relative; z-index:99;
+	}
+
+	dl {
+		border-right:1px solid #eee;
+		float:left;
+		width:94px;
+		text-align:center;
+		cursor: pointer;
+
+		&.larger { width:140px; }
+		&.superior {
+			border-bottom:1px solid #eee;
+			dd { top:65px; }
+		}
+		&.last { border-right:none; }
+
+		dt{
+			display: block;
+			width: 70px;
+			height: 64px;
+			margin: 0 12px;
+			background: url('../img/icones.png') no-repeat 0 0;
+
+			&#select-volks-link{background-position: -14px 0;}
+			&#select-chev-link{background-position: -108px 0;}
+			&#select-peugeot-link{background-position: -203px 0;}
+			&#select-mv-link{background-position: -298px 0;}
+			&#select-jeep-link{background-position: -392px 0;}
+			&#select-mercedez-link{background-position: -489px 0;}
+			&#select-dodge-link{background-position: -583px 0;}
+			&#select-dafra-link{background-position: -678px 0;}
+			&#select-seminovos-link{background-position: -771px 0; width:140px;}
+			&#select-volvo-link{background-position: -913px 0;}
+			&#select-fiat-link{background-position: -14px -67px;}
+			&#select-ford-link{background-position: -108px -67px;}
+			&#select-toyota-link{background-position: -203px -67px;}
+			&#select-renault-link{background-position: -298px -67px;}
+			&#select-land-link{background-position: -392px -67px;}
+			&#select-nissan-link{background-position: -489px -67px;}
+			&#select-hyundai-link{background-position: -583px -67px}
+			&#select-citroen-link{background-position: -678px -67px;}
+			&#select-chrysler-link{background-position: -771px -65px; width:140px;}
+			&#select-mitsubishi-link{background-position: -913px -65px;}
+		}
+
+		dd{
+			display: none;
+			position:absolute;
+			top:130px;
+			z-index:10;
+			background: rgba(255,255,255,0.9);
+			.radius(10px);
+			.shadow();
+
+			ul{
+				width:247px;
+				padding:20px;
+				margin-top: -11px;
+				overflow:hidden;
+				background: url('../img/icones.png') no-repeat 0px -361px;
+
+				li{
+					border-bottom:1px dotted #aaa;
+					padding: 4px 0;
+					.clearfix();
+					text-align: left;
+
+					span{float: right;}
+
+					img { display:block; margin:0 auto ; }
+				}
+
+			}
+		}
+
+	}
+
+}
+
+.mainHome {
+	background:url(../images/bgMainHome.jpg) center top repeat; padding:7px 0 14px 0;
+
+	.buscadorHome {
+		float:left;
+		height:345px;
+		width:271px;
+		margin:0 31px 0 5px;
+
+		#tabs{
+			ul{
+				margin-top: -29px;
+				position: absolute;
+				li{
+					background-color: rgba(130,168,189,0.5);
+					.radius(7px 7px 0px 0px);
+					text-shadow:1px 1px 1px #222;
+					line-height:29px;
+					float:left;
+					width:69px;
+					height: 29px;
+					margin-right:5px;
+					text-align:center;
+
+					a{
+						color:#ccc;
+					}
+				}
+			}
+
+			article{
+				width: 271px;
+				height: 316px;
+				background-color: rgba(130,168,189,0.5);
+				margin-top: 29px;
+				.radius(0px 7px 7px 7px);
+			}
+		}
+
+		#buscadorCarros {
+			padding-left:12px;
+
+			label{
+				position:relative;
+				&.bcRadio{
+					display:block;
+					float:left;
+					width:85px;
+					margin:10px 0;
+				}
+				span{
+					color:#fff;
+				}
+
+				&.buscaCarroAnode{
+					display:block;
+					padding-left:25px;
+					width:240px;
+					margin:10px 0;
+
+					select {  width:110px; margin-right:5px; }
+					span { position:absolute; top:120px; left:0; }
+				}
+
+				&.buscaCarroPrecode{
+					display:block;
+					padding-left:25px;
+					width:240px;
+					margin:10px 0;
+
+					select {  width:110px; margin-right:5px; }
+					span { position:absolute; top:155px; left:0; }
+				}
+			}
+
+			select{
+				border:1px #c7cbcd solid;
+				display:block;
+				float:left;
+				margin-bottom:10px;
+				padding-left: 10px;
+				line-height:28px;
+				height:28px;
+				vertical-align:middle;
+				color: #222;
+				font-size: 11px;
+				border-radius:3px;
+				-webkit-border-radius:3px;
+				-moz-border-radius:3px;
+				-ms-border-radius:3px;
+				-o-border-radius:3px;
+
+				&#buscaCarroMarca { width:250px; }
+				&#buscaCarroModelo { width:250px; }
+				&#municipioNews { width:172px; }
+			}
+
+			input[type=button] {
+				background:url(../images/bgBtn.jpg) center top repeat-x;
+				border:1px solid #ccc;
+				color:#222;
+				cursor:pointer;
+				font-weight:bold;
+				height:26px;
+				width:250px;
+				border-radius:5px;
+				-moz-border-radius:5px;
+				-ms-border-radius:5px;
+				-o-border-radius:5px;
+				-webkit-border-radius:5px;
+				transition:.15s ease-out;
+				-webkit-transition:.15s ease-out;
+				-moz-transition:.15s ease-out;
+				-o-transition:.15s ease-out;
+				-ms-transition:.15s ease-out;
+
+				&:hover { background:#f2f2f2; }
+			}
+		} /*#buscadorCarros*/
+	} /*buscadorHome*/
+
+	.buscadorCheckbox {
+		background: #fff;
+		.radius(0px 7px 7px 7px);
+		float:left;
+		margin-top: 30px;
+		height:304px;
+		width:277px;
+		margin-right:30px;
+		padding-top:10px;
+
+		p {
+			color:#002c50;
+			font-weight:bold;
+			padding-left:10px;
+			width: 200px;
+			height: 30px;
+			padding-top: 10px;
+			margin-top: -40px;
+			background-color: #fff;
+			.radius();
+		}
+
+		form{
+			margin-top: -20px;
+			label{
+				display:block;
+				float:left;
+				margin:9px 20px 9px 10px;
+				height:33px;
+				width:108px;
+				position:relative;
+				background: url('../img/icones.png') no-repeat ;
+
+				&.esportivo1 { background-position: -280px -280px; }
+				&.esportivo2 { background-position: -369px -283px; }
+				&.esportivo3 { background-position: -464px -281px; }
+				&.esportivo4 { background-position: -559px -283px; }
+				&.esportivo5 { background-position: -656px -281px; }
+				&.esportivo6 { background-position: -780px -280px; }
+				&.esportivo7 { background-position: -897px -283px; }
+				&.esportivo8 { background-position: -276px -345px; }
+				&.esportivo9 { background-position: -373px -344px; }
+				&.esportivo10 { background-position: -469px -347px; }
+				&.esportivo11 { background-position: -558px -348px; }
+				&.esportivo12 { background-position: -652px -348px; }
+
+				span { color:#848484; font-size:11px; position:absolute; top:35px; left:25px; text-decoration:underline; }
+
+			}
+
+			&.vermelho{
+				label{
+					&.esportivo1 { background-position: -280px -416px; }
+					&.esportivo2 { background-position: -369px -419px; }
+					&.esportivo3 { background-position: -467px -417px; }
+					&.esportivo4 { background-position: -559px -419px; }
+					&.esportivo5 { background-position: -656px -417px; }
+					&.esportivo6 { background-position: -780px -416px; }
+					&.esportivo7 { background-position: -897px -419px; }
+					&.esportivo8 { background-position: -276px -481px; }
+					&.esportivo9 { background-position: -373px -480px; }
+					&.esportivo10 { background-position: -469px -483px; }
+					&.esportivo11 { background-position: -558px -484px; }
+					&.esportivo12 { background-position: -652px -483px; }
+				}
+			}
+
+			input[type=checkbox] { position:absolute; top:10px; left:0; }
+		}
+	}
+
+	.sliderOfertas {
+		background:url(../images/bgOfertas.png) left top no-repeat;
+		float:left;
+		height:180px;
+		padding-left:8px;
+		position:relative;
+		width:377px;
+
+		img { float:left; width:197px; }
+
+		.boxTexto {
+			float:left;
+			width:166px;
+			line-height:16px;
+			padding-top:10px;
+
+			h3 { font-size:18px; font-weight:bold; line-height:24px; }
+			p span { color:#b22f2f; font-size:18px; font-weight:bold; line-height:24px; }
+			a {
+				text-decoration:underline;
+				&:hover { text-decoration:none; }
+			}
+		}
+	}
+
+
+	.boxRenoveSeguros {
+		float:left; margin-right:17px;
+		h3 { color:#fff; line-height:24px; }
+	}
+
+	.boxAcaoSocial {
+		float:left;
+		h3 { color:#fff; line-height:24px; }
+	}
+
+}
+
+/*prevenir IE scroll bug*/
+.ui-tabs {
+	position: relative;
+
+	.ui-tabs-nav {
+		li{
+			/*fundo diferente para aba atual*/
+			&.ui-tabs-active,
+			&.ui-state-disabled,
+			&.ui-tabs-loading{
+				background-color: rgba(130,168,189,0.5);
+				.radius(7px 7px 0px 0px);
+			}
+
+			/*desabilitar link e realçar texto para aba atual */
+			&.ui-tabs-active a,
+			&.ui-state-disabled a,
+			&.ui-tabs-loading a{
+				cursor: text;
+				color:#fff!important;
+			}
+		}
+	}
+}
+
+/*correção de bug - abas selecionáveis*/
+.ui-tabs .ui-tabs-nav li a,
+.ui-tabs-collapsible .ui-tabs-nav li.ui-tabs-active a {
+	cursor: pointer;
+}
+
+.publicidadeHome { padding:10px 0; }
+
+.inferiorHome {
+	background:url(../images/bgDestaques.jpg) center top repeat-x;
+	height:1071px;
+	border-top:1px solid #8e8e8e;
+
+	.colEsqHome{
+		float: left;
+		.clearfix();
+	}
+
+	.destaquesHome{
+		width:770px;
+
+		h3 {
+			background: url('../img/icones.png') no-repeat -837px -354px;
+			width: 146px;
+			height: 31px;
+			margin-left: 10px;
+
+			span { display:none; height:31px; }
+		}
+
+		a{
+			&.prevBt{
+				background: url('../img/icones.png') no-repeat -307px -566px;
+				width: 7px;
+				height: 10px;
+				width: 24px;
+				height: 19px;
+			}
+
+			&.nextBt{
+				background: url('../img/icones.png') no-repeat -335px -566px;
+				width: 7px;
+				height: 10px;
+				width: 24px;
+				height: 19px;
+			}
+
+		}
+
+		.boxCarro {
+			padding-bottom:20px;
+			.clearfix();
+
+			img{
+				border:1px solid #bababa;
+				margin-bottom:5px;
+				&.financie { border-right:1px solid #bababa; }
+			}
+
+			h1{ font-size:14px; font-weight:bold; }
+
+			span{
+				font-size: 12px;
+				line-height: 25px;
+			}
+
+			h2{
+				color:#b51e23;
+				font-size: 12px;
+				span{
+					font-size:18px;
+					font-weight:bold;
+					line-height:24px;
+				}
+			}
+
+			a{
+				width: 24px;
+				height: 28px;
+				float: left;
+				background: url('../img/icones.png') no-repeat;
+
+				&.proposta{
+					background-position: -793px -486px;
+				}
+
+				&.financiamento{
+					background-position: -825px -486px;
+					border-right:1px solid #bababa;
+				}
+
+				&.ficha{
+					background-position: -856px -486px;
+				}
+
+				&.indique{
+					background-position: -888px -486px;
+				}
+
+				&.face{
+					background-position: -919px -486px;
+				}
+
+			}
+
+		}
+	}
+
+	.boxNews {
+		clear:both;
+		float:left;
+		margin-right:36px;
+		width:234px;
+
+		h3 {
+			background:#2B2E31;
+			.radius(2px);
+			color:#fff;
+			font-weight:bold;
+			line-height:21px;
+			margin-bottom:10px;
+			padding-left:5px;
+			width:70px;
+		}
+
+		p {
+			color:#8f8f8f;
+			font-size:11px;
+		}
+
+		form {
+			margin:10px 0;
+
+			input{
+				&[type=text]{
+					border:1px #c7cbcd solid;
+					background: #fff;
+					float:left;
+					width: 222px;
+					margin-bottom:10px;
+					padding-left: 10px;
+					line-height:28px;
+					height: 28px;
+					color: #222;
+					font-size: 11px;
+					font-style: italic;
+					border-radius:3px;
+					-webkit-border-radius:3px;
+					-moz-border-radius:3px;
+					-ms-border-radius:3px;
+					-o-border-radius:3px;
+				}
+
+				&[type=button] {
+					background:url(../images/bgBtn.jpg) center top repeat-x;
+					border:1px solid #ccc;
+					color:#222;
+					cursor:pointer;
+					float:right;
+					height:26px;
+					width:77px;
+					border-radius:5px;
+					-moz-border-radius:5px;
+					-ms-border-radius:5px;
+					-o-border-radius:5px;
+					-webkit-border-radius:5px;
+					transition:.15s ease-out;
+					-webkit-transition:.15s ease-out;
+					-moz-transition:.15s ease-out;
+					-o-transition:.15s ease-out;
+					-ms-transition:.15s ease-out;
+
+					&:hover { background:#f2f2f2; }
+				}
+
+			}
+
+			select{
+				border:1px #c7cbcd solid;
+				float:left;
+				margin-bottom:10px;
+				padding-left: 10px;
+				line-height:28px;
+				height:28px;
+				vertical-align:middle;
+				color: #222;
+				font-size: 11px;
+				border-radius:3px;
+				-webkit-border-radius:3px;
+				-moz-border-radius:3px;
+				-ms-border-radius:3px;
+				-o-border-radius:3px;
+
+				&#estadoNews { margin-right:10px; width:52px; }
+				&#municipioNews { width:172px; }
+			}
+		}
+	}
+
+	.boxEnquete {
+		float:left;
+		width:200px;
+
+		h3 {
+			background:#2B2E31;
+			.radius(2px);
+			color:#fff;
+			font-weight:bold;
+			line-height:21px;
+			margin-bottom:10px;
+			padding-left:5px;
+			width:70px;
+		}
+
+		p { color:#8f8f8f; font-size:11px; }
+
+		form {
+			margin:10px 0;
+
+			label  { color:#222; display:block; font-style:italic; margin:8px 0; }
+
+			input{
+				&[type=button]{
+					background:url(../images/bgBtn.jpg) center top repeat-x;
+					border:1px solid #ccc;
+					color:#222;
+					cursor:pointer;
+					height:26px;
+					width:35px;
+					border-radius:5px;
+					-moz-border-radius:5px;
+					-ms-border-radius:5px;
+					-o-border-radius:5px;
+					-webkit-border-radius:5px;
+					transition:.15s ease-out;
+					-webkit-transition:.15s ease-out;
+					-moz-transition:.15s ease-out;
+					-o-transition:.15s ease-out;
+					-ms-transition:.15s ease-out;
+
+					&:hover { background:#f2f2f2; }
+				}
+			}
+		}
+	}
+
+	.boxFacebook { float:left; height:242px; width:300px; }
+
+	/* //Sidebar */
+	.sideServicosHome {
+		float:right;
+		padding-left:13px;
+		width:217px;
+
+		section{
+			border-top: 1px solid #acaeb1;
+
+			article{
+				border-top: 1px solid #e5e7e8;
+			}
+		}
+
+		h2 {
+			background: #2B2E31;
+			.radius(0 0 4px 4px);
+			color:#fff;
+			font-weight:bold;
+			line-height:29px;
+			padding:0 0 0 12px;
+			margin-bottom: 14px;
+			width:196px;
+		}
+
+		.segurosHome {
+			background:url(../images/bgSegurosHome.png) center center no-repeat;
+			 /*1px solid #e5e7e8*/
+			height:310px;
+			width:208px;
+
+			.blocoTexto {
+				padding:25px 90px 25px 15px;
+
+				h3 { color:#363636; font-size:14px; font-weight:bold; line-height:16px; text-shadow:1px 1px 1px #eee; }
+				p { color:#343434; margin-top:5px; }
+				a {
+					color:#343434;
+					margin-top:2px;
+					text-decoration:underline;
+					&:hover { text-decoration:none; }
+				}
+			}
+		}
+
+		.assistenciaHome {
+			background:url(../images/bgAssistenciaHome.png) center center no-repeat;
+			height:310px;
+			width:208px;
+
+			.blocoTexto {
+				padding:25px 80px 25px 15px;
+
+				h3 { color:#fff; font-size:14px; font-weight:bold; line-height:16px; text-shadow:1px 1px 1px #222; }
+				p { color:#fff; margin-top:165px; }
+				a {
+					color:#fff;
+					margin-top:2px;
+					text-decoration:underline;
+					&:hover { text-decoration:none; }
+				}
+			}
+		}
+
+
+		.avaliacaoHome {
+			background:url(../images/bgAvalieHome.png) center center no-repeat;
+			height:310px;
+			width:208px;
+
+			.blocoTexto {
+				padding:25px 90px 25px 15px;
+
+				h3{ color:#fff; font-size:14px; font-weight:bold; line-height:16px; text-shadow:1px 1px 1px #222; }
+				p { color:#404040; margin-top:5px; }
+				a {
+					color:#404040;
+					margin-top:2px;
+					text-decoration:underline;
+					&:hover { text-decoration:none; }
+				}
+			}
+		}
+	}
+}
+
+/*
+=======================================================================
+	Footer
+=======================================================================
+*/
+
+footer{
+	.carrosHome {
+
+		.textoCarros { color:#9e9e9e; font-size:7px; float:left; width:605px; padding:15px 15px 15px 0; }
+
+		.marcasCarros {
+			float:right;
+			width:380px;
+			padding-top:22px;
+
+			ul {
+				float:left;
+
+				li {
+					background: url('../img/icones.png') no-repeat -389px -568px;
+					margin:0 5px 5px 0;
+					padding-left:13px;
+					width:172px;
+
+					a {
+						color:#4883ce;
+						font-size:10px;
+						text-decoration:underline;
+
+						&:hover { text-decoration:none; }
+					}
+				}
+			}
+		}
+	}
+
+
+	.footer {
+		background:#002d54;
+		clear:both;
+		width:100%;
+
+		.centraliza {
+			background: url(../img/bgFooter.png) no-repeat  top center;
+			position:relative;
+			height:188px;
+
+			#logo-footer{
+				width: 950px;
+				height: 95px;
+				background: url(../images/logoItavema.png) no-repeat center;
+				position: absolute;
+			}
+
+			.menuFooter {
+				height:14px;
+				position:relative;
+				top:105px;
+
+				ul{
+					font-size:11px;
+					position:relative;
+					margin:0 auto;
+					width:882px;
+
+					li{
+						float:left;
+
+						a{
+							color:#fff;
+							padding:0 10px;
+							border-right:1px solid #fff;
+							transition:.25s ease-out;
+							-webkit-transition:.25s ease-out;
+							-moz-transition:.25s ease-out;
+							-o-transition:.25s ease-out;
+							-ms-transition:.25s ease-out;
+
+							&:hover { color:#a9a9a9; }
+							&.last { border-right:none; }
+						}
+					}
+				}
+			}
+
+			.copyrights { color:#a9a9a9; font-size:11px; position:absolute; left:0; top:155px; width:1000px; }
+
+			.linkVmotors a {
+				color:#a9a9a9;
+				text-decoration:none;
+
+				&:hover { text-decoration:underline; }
+			}
+		}
+	}
+}
+
+/*
+=======================================================================
+	Tooltip
+=======================================================================
+*/
+
+
+/****Posição absoluta das Tooltips - necessário para corrigir o bug de z-index do ie*********/  
+/*#sVolks { left:5px; }
+#sChev { left:100px; }
+#sPeugeot { left:195px; }
+#sMV { left:290px; }
+#sJeep { left:385px; }
+#sMercedez { left:480px; }
+#sDodge { left:575px; }
+#sDafra { left:670px; }
+#sSeminovos { left:765px; }
+#sVolvo { left:905px; }
+#sFiat { left:5px; }
+#sFord { left:100px; }
+#sToyota { left:195px; }
+#sRenault { left:290px; }
+#sLand { left:385px; }
+#sNissan { left:480px; }
+#sHyundai { left:575px; }
+#sCitroen { left:670px; }
+#sChrysler { left:765px; }*/
+
+
+
+
+/*
+=======================================================================
+	Conteúdo Geral - Internas
+=======================================================================
+*/
+.mainInternas {
+	border-top: 1px solid #BBBEC3;
+	border-bottom: 1px solid #BBBEC3;
+	padding-bottom: 40px;
+	.clearfix();
+
+	background: #e2e2e2; /* Old browsers */
+	background: -moz-linear-gradient(top,  #e2e2e2 0%, #ffffff 15%, #ffffff 85%, #e2e2e2 100%, #e8e8e8 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e2e2e2), color-stop(15%,#ffffff), color-stop(85%,#ffffff), color-stop(100%,#e2e2e2), color-stop(100%,#e8e8e8)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #e2e2e2 0%,#ffffff 15%,#ffffff 85%,#e2e2e2 100%,#e8e8e8 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #e2e2e2 0%,#ffffff 15%,#ffffff 85%,#e2e2e2 100%,#e8e8e8 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #e2e2e2 0%,#ffffff 15%,#ffffff 85%,#e2e2e2 100%,#e8e8e8 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #e2e2e2 0%,#ffffff 15%,#ffffff 85%,#e2e2e2 100%,#e8e8e8 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2e2e2', endColorstr='#e8e8e8',GradientType=0 ); /* IE6-9 */
+
+	h2 {
+		color:#333;
+		font-size:20px;
+		line-height:30px;
+		padding:15px 0 20px 0;
+	}
+
+	h3 {
+		color:#444;
+		font-size:16px;
+		line-height:24px;
+		padding-bottom:5px;
+	}
+
+	h4 {
+		color:#444;
+		font-weight:bold;
+	}
+
+	h5 { font-weight:bold; }
+
+	p {
+		line-height: 18px;
+		padding-bottom:10px;
+
+		&.bold { font-weight:bold; }
+		&.last { margin-bottom:10px; }
+	}
+
+	article{
+
+		&.colEsqInternas{
+			border-right:1px solid #ccc;
+			float:left;
+			width:600px;
+			padding-right:20px;
+
+			img{
+				&.destaque {
+					background:url(../images/sombraBanner.png) center bottom repeat-x;
+					display:block;
+					margin-bottom:5px;
+					height:170px;
+					width:600px;
+					padding-bottom:7px;
+				}
+
+				&.destaque.side{
+					background:url(../images/sombraBannerSide.png) center bottom repeat-x;
+					height:180px;
+					width:359px;
+				}
+			}
+		}
+
+		&#article-lojas{
+			dl{
+				h3 {
+					line-height:49px;
+					padding-left:20px;
+					span { display:none; }
+				}
+
+				dt{
+					background:url(../images/bgAccordion.jpg) left top no-repeat;
+					cursor:pointer;
+					height:49px;
+					padding-left:30px;
+					overflow:hidden;
+
+					&.ui-accordion-header-active { background-position:left bottom; }
+
+					img.concessionarias { padding:10px 30px 0 0; }
+
+					p { line-height:49px; }
+				}
+
+				dd {
+					padding:10px 0;
+					border-bottom:1px dotted #ccc;
+					.clearfix();
+
+					.sideLoja {
+						float:left;
+						margin-right:20px;
+						width:128px;
+
+						.thumbLoja { width:128px; }
+					}
+
+					.conteudoLoja {
+						border:1px solid #ccc;
+						float:right;
+						width:450px;
+						-webkit-border-radius:3px;
+						-moz-border-radius:3px;
+						-ms-border-radius:3px;
+						-o-border-radius:3px;
+						border-radius:3px;
+
+						h4 { color:#50a5de; line-height:45px; border-bottom:1px solid #ccc; padding:0 10px; }
+
+						table {
+							margin:0 auto;
+							width:430px;
+
+							tr{
+								td{
+									padding:5px 0;
+									&.campo{
+										font-weight:bold;
+									}
+								}
+							}
+						}
+
+						.iconsLoja {
+							border-top:1px solid #ccc;
+							min-height:30px;
+							padding:10px 0 5px 0;
+
+							img{
+								margin-left:3px;
+							}
+						}
+					}
+				}
+			}
+		}
+
+		&#article-tabela-serv{
+
+			dl{
+				h3 {
+					line-height:49px;
+					padding-left:20px;
+					span { display:none; }
+				}
+
+				dt{
+					background:url(../images/bgAccordion.jpg) left top no-repeat;
+					cursor:pointer;
+					height:49px;
+					padding-left:30px;
+					overflow:hidden;
+
+					&.ui-accordion-header-active { background-position:left bottom; }
+
+					img{ float: left; }
+
+				}
+
+				dd {
+					padding:0 0 10px 0;
+					.clearfix();
+
+					h4{
+						background:#eee;
+						line-height:30px;
+						margin:5px 0 2px 0;
+						padding-left:10px;
+					}
+
+					h6 {
+						color:#c00;
+						font-size:11px;
+						line-height: 40px;
+					}
+
+					.tpPrecos {
+						background:#eee;
+						padding:10px;
+						margin-bottom:2px;
+						.clearfix();
+					}
+
+					.blocoPreco {
+						background:#fafafa;
+						float:left;
+						margin-right:2px;
+						padding:5px;
+						width:104px;
+
+						h5{
+							padding-bottom:10px;
+							text-align:center;
+							color:#50a5de; font-weight:bold;
+							line-height: 18px;
+						}
+
+						p {
+							padding-bottom:10px;
+							text-align:center;
+						}
+
+						h6{
+							padding-bottom:10px;
+							text-align:center;
+							font-weight:bold;
+							line-height: 18px;
+							color: #000;
+						}
+					}
+				}
+			}
+
+		}
+
+		&#article-vendas-diretas{
+
+			dl{
+				h3 {
+					line-height:49px;
+					padding-left:20px;
+					span { display:none; }
+				}
+
+				dt{
+					background:url(../images/bgAccordion.jpg) left top no-repeat;
+					cursor:pointer;
+					height:49px;
+					padding-left:30px;
+					overflow:hidden;
+					margin-bottom:20px;
+
+					&.ui-accordion-header-active { background-position:left bottom; }
+
+				}
+
+				dd {
+					padding:0 0 10px 0;
+					.clearfix();
+
+				}
+			}
+
+		}
+
+		ul.dotted { list-style:disc; line-height:18px; padding:0 0 10px 35px; }
+
+	}
+
+	aside{
+
+		&.colDirInternas{
+			float:left;
+			width:359px;
+			padding-left:20px;
+		}
+
+		&#aside-empresa, &#aside-contato{
+			article{
+				padding:10px 0;
+				border-bottom:1px dotted #ccc;
+
+				&.last{
+					border:none;
+				}
+
+				p { padding-bottom:0; }
+
+				h4 {
+					margin-bottom:5px;
+					&.oneLine { line-height:43px; }
+				}
+
+				img { margin-right:5px; float: left;}
+			}
+		}
+
+		img{
+				&.destaque {
+					background:url(../images/sombraBanner.png) center bottom repeat-x;
+					display:block;
+					margin-bottom:5px;
+					height:170px;
+					width:600px;
+					padding-bottom:7px;
+				}
+
+				&.destaque.side{
+					background:url(../images/sombraBannerSide.png) center bottom repeat-x;
+					height:180px;
+					width:359px;
+				}
+			}
+
+		ul{
+			&.sideMenu{
+				li{
+					background: #f1f1f1;
+					border-left:5px solid #021946;
+					margin-bottom:3px;
+					-moz-transition: .25s ease-out;
+					-ms-transition: .25s ease-out;
+					-o-transition: .25s ease-out;
+					-webkit-transition: .25s ease-out;
+					transition: .25s ease-out;
+
+					a { font-size:14px; line-height:40px; padding-left: 15px; color:#222; display:block; text-decoration:none; }
+
+					&:hover { background:#e1e1e1; }
+				}
+			}
+		}
+
+	}
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
